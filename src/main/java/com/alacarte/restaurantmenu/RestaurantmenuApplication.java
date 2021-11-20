@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+import java.util.List;
+
 @SpringBootApplication
 @RestController
 public class RestaurantmenuApplication {
@@ -14,8 +17,8 @@ public class RestaurantmenuApplication {
 	}
 
 	@GetMapping
-	public String helloWorld() {
-		return "Hello world";
+	public List<String> helloWorld() {
+		return List.of("Hello",  "world");
 	}
 
 }
