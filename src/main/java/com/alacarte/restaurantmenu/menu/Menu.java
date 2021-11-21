@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Menu {
     private Long id;
     private String chef;
+    private float averagePrice;
     private ArrayList<String> dietaryOptions;
     private ArrayList<String> starter;
     private ArrayList<String> mainCourse;
@@ -14,10 +15,11 @@ public class Menu {
     public Menu() {
     }
 
-    public Menu(Long id, String chef, ArrayList<String> dietaryOptions, ArrayList<String> starter,
+    public Menu(Long id, String chef, float averagePrice, ArrayList<String> dietaryOptions, ArrayList<String> starter,
                 ArrayList<String> mainCourse, ArrayList<String> dessert, ArrayList<String> drinks) {
         this.id = id;
         this.chef = chef;
+        this.averagePrice = averagePrice;
         this.dietaryOptions = dietaryOptions;
         this.starter = starter;
         this.mainCourse = mainCourse;
@@ -25,9 +27,10 @@ public class Menu {
         this.drinks = drinks;
     }
 
-    public Menu(String chef, ArrayList<String> dietaryOptions, ArrayList<String> starter,
+    public Menu(String chef, float averagePrice, ArrayList<String> dietaryOptions, ArrayList<String> starter,
                 ArrayList<String> mainCourse, ArrayList<String> dessert, ArrayList<String> drinks) {
         this.chef = chef;
+        this.averagePrice = averagePrice;
         this.dietaryOptions = dietaryOptions;
         this.starter = starter;
         this.mainCourse = mainCourse;
@@ -49,6 +52,14 @@ public class Menu {
 
     public void setChef(String chef) {
         this.chef = chef;
+    }
+
+    public float getAveragePrice() {
+        return averagePrice;
+    }
+
+    public void setAveragePrice(float averagePrice) {
+        this.averagePrice = averagePrice;
     }
 
     public ArrayList<String> getDietaryOptions() {
@@ -96,6 +107,7 @@ public class Menu {
         return "Menu{" +
                 "id=" + id +
                 ", chef='" + chef + '\'' +
+                ", averagePrice=" + averagePrice +
                 ", dietaryOptions=" + dietaryOptions +
                 ", starter=" + starter +
                 ", mainCourse=" + mainCourse +
