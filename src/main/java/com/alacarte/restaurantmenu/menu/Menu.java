@@ -1,22 +1,24 @@
 package com.alacarte.restaurantmenu.menu;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Menu {
     private Long id;
     private String chef;
     private float averagePrice;
     private ArrayList<String> dietaryOptions;
-    private ArrayList<String> starter;
-    private ArrayList<String> mainCourse;
-    private ArrayList<String> dessert;
-    private ArrayList<String> drinks;
+    private HashMap<String, Float> starter;
+    private HashMap<String, Float> mainCourse;
+    private HashMap<String, Float> dessert;
+    private HashMap<String, Float> drinks;
 
     public Menu() {
     }
 
-    public Menu(Long id, String chef, float averagePrice, ArrayList<String> dietaryOptions, ArrayList<String> starter,
-                ArrayList<String> mainCourse, ArrayList<String> dessert, ArrayList<String> drinks) {
+    public Menu(Long id, String chef, float averagePrice, ArrayList<String> dietaryOptions,
+                HashMap<String, Float> starter, HashMap<String, Float> mainCourse,
+                HashMap<String, Float> dessert, HashMap<String, Float> drinks) {
         this.id = id;
         this.chef = chef;
         this.averagePrice = averagePrice;
@@ -27,8 +29,8 @@ public class Menu {
         this.drinks = drinks;
     }
 
-    public Menu(String chef, float averagePrice, ArrayList<String> dietaryOptions, ArrayList<String> starter,
-                ArrayList<String> mainCourse, ArrayList<String> dessert, ArrayList<String> drinks) {
+    public Menu(String chef, float averagePrice, ArrayList<String> dietaryOptions, HashMap<String, Float> starter,
+                HashMap<String, Float> mainCourse, HashMap<String, Float> dessert, HashMap<String, Float> drinks) {
         this.chef = chef;
         this.averagePrice = averagePrice;
         this.dietaryOptions = dietaryOptions;
@@ -70,35 +72,35 @@ public class Menu {
         this.dietaryOptions = dietaryOptions;
     }
 
-    public ArrayList<String> getStarter() {
+    public HashMap<String, Float> getStarter() {
         return starter;
     }
 
-    public void setStarter(ArrayList<String> starter) {
+    public void setStarter(HashMap<String, Float> starter) {
         this.starter = starter;
     }
 
-    public ArrayList<String> getMainCourse() {
+    public HashMap<String, Float> getMainCourse() {
         return mainCourse;
     }
 
-    public void setMainCourse(ArrayList<String> mainCourse) {
+    public void setMainCourse(HashMap<String, Float> mainCourse) {
         this.mainCourse = mainCourse;
     }
 
-    public ArrayList<String> getDessert() {
+    public HashMap<String, Float> getDessert() {
         return dessert;
     }
 
-    public void setDessert(ArrayList<String> dessert) {
+    public void setDessert(HashMap<String, Float> dessert) {
         this.dessert = dessert;
     }
 
-    public ArrayList<String> getDrinks() {
+    public HashMap<String, Float> getDrinks() {
         return drinks;
     }
 
-    public void setDrinks(ArrayList<String> drinks) {
+    public void setDrinks(HashMap<String, Float> drinks) {
         this.drinks = drinks;
     }
 
