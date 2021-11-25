@@ -1,2 +1,4 @@
-package com.alacarte.restaurantmenu.menu;public class MenuService {
+package com.alacarte.restaurantmenu.menu;
+
+public class MenuService {
 }
