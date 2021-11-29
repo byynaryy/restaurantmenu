@@ -1,8 +1,14 @@
 package com.alacarte.restaurantmenu.menu;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
+@Entity
+@Table
 public class Menu {
     private Long id;
     private String chef;
