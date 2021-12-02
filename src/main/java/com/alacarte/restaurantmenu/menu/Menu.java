@@ -2,6 +2,8 @@ package com.alacarte.restaurantmenu.menu;
 
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerators;
 import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,6 +12,8 @@ import java.util.HashMap;
 @Entity
 @Table
 public class Menu {
+    @Id
+    @SequenceGenerators()
     private Long id;
     private String chef;
     private float averagePrice;
