@@ -13,7 +13,9 @@ public class Menu {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE
     )
-    @SequenceGenerator()
+    @SequenceGenerator(
+            name = "menu_generator"
+    )
     private Long id;
     private String chef;
     private float averagePrice;
