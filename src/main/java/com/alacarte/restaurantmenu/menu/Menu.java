@@ -10,8 +10,12 @@ import java.util.HashMap;
 @Table
 public class Menu {
     @Id
-    @SequenceGenerators()
-    @GeneratedValue()
+    @SequenceGenerators(
+            
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE
+    )
     private Long id;
     private String chef;
     private float averagePrice;
