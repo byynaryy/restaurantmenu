@@ -11,7 +11,8 @@ import java.util.HashMap;
 public class Menu {
     @Id
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE
+            strategy = GenerationType.SEQUENCE,
+            generator = "menu_generator"
     )
     @SequenceGenerator(
             name = "menu_generator"
