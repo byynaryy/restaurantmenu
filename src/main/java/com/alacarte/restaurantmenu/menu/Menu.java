@@ -16,7 +16,8 @@ public class Menu {
     )
     @SequenceGenerator(
             name = "menu_generator",
-            sequenceName = "menu_sequence"
+            sequenceName = "menu_sequence",
+            allocationSize = 1
     )
     private Long id;
     private String chef;
