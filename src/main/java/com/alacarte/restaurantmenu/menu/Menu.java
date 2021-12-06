@@ -4,6 +4,7 @@ package com.alacarte.restaurantmenu.menu;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 @Entity
@@ -22,7 +23,11 @@ public class Menu {
     private Long id;
     private String chef;
     private float averagePrice;
-    private ArrayList<String> dietaryOptions;
+    @ElementCollection
+    @CollectionTable(name = "dietary_options",
+            joinColumns = {@JoinColumn(name = "menu_id", referencedColumnName = "id")})
+    @Column(name = "dietary")
+    private List<String> dietaryOptions;
     private HashMap<String, Float> starter;
     private HashMap<String, Float> mainCourse;
     private HashMap<String, Float> dessert;
@@ -31,7 +36,7 @@ public class Menu {
     public Menu() {
     }
 
-    public Menu(Long id, String chef, float averagePrice, ArrayList<String> dietaryOptions,
+    public Menu(Long id, String chef, float averagePrice, List<String> dietaryOptions,
                 HashMap<String, Float> starter, HashMap<String, Float> mainCourse,
                 HashMap<String, Float> dessert, HashMap<String, Float> drinks) {
         this.id = id;
@@ -44,7 +49,7 @@ public class Menu {
         this.drinks = drinks;
     }
 
-    public Menu(String chef, float averagePrice, ArrayList<String> dietaryOptions, HashMap<String, Float> starter,
+    public Menu(String chef, float averagePrice, List<String> dietaryOptions, HashMap<String, Float> starter,
                 HashMap<String, Float> mainCourse, HashMap<String, Float> dessert, HashMap<String, Float> drinks) {
         this.chef = chef;
         this.averagePrice = averagePrice;
@@ -79,11 +84,11 @@ public class Menu {
         this.averagePrice = averagePrice;
     }
 
-    public ArrayList<String> getDietaryOptions() {
+    public List<String> getDietaryOptions() {
         return dietaryOptions;
     }
 
-    public void setDietaryOptions(ArrayList<String> dietaryOptions) {
+    public void setDietaryOptions(List<String> dietaryOptions) {
         this.dietaryOptions = dietaryOptions;
     }
 
