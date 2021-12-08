@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Entity
@@ -28,7 +29,12 @@ public class Menu {
             joinColumns = {@JoinColumn(name = "menu_id", referencedColumnName = "id")})
     @Column(name = "dietary")
     private List<String> dietaryOptions;
-    private HashMap<String, Float> starter;
+    @ElementCollection
+    @CollectionTable(name = "starter",
+            joinColumns = {@JoinColumn(name = "menu_id", referencedColumnName = "id")})
+    @MapKeyColumn(name = "starter_name")
+    @Column(name = "price")
+    private Map<String, Float> starter;
     private HashMap<String, Float> mainCourse;
     private HashMap<String, Float> dessert;
     private HashMap<String, Float> drinks;
@@ -37,7 +43,7 @@ public class Menu {
     }
 
     public Menu(Long id, String chef, float averagePrice, List<String> dietaryOptions,
-                HashMap<String, Float> starter, HashMap<String, Float> mainCourse,
+                Map<String, Float> starter, HashMap<String, Float> mainCourse,
                 HashMap<String, Float> dessert, HashMap<String, Float> drinks) {
         this.id = id;
         this.chef = chef;
@@ -49,7 +55,7 @@ public class Menu {
         this.drinks = drinks;
     }
 
-    public Menu(String chef, float averagePrice, List<String> dietaryOptions, HashMap<String, Float> starter,
+    public Menu(String chef, float averagePrice, List<String> dietaryOptions, Map<String, Float> starter,
                 HashMap<String, Float> mainCourse, HashMap<String, Float> dessert, HashMap<String, Float> drinks) {
         this.chef = chef;
         this.averagePrice = averagePrice;
@@ -92,7 +98,7 @@ public class Menu {
         this.dietaryOptions = dietaryOptions;
     }
 
-    public HashMap<String, Float> getStarter() {
+    public Map<String, Float> getStarter() {
         return starter;
     }
 
