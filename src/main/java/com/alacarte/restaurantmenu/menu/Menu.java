@@ -35,9 +35,9 @@ public class Menu {
     @MapKeyColumn(name = "starter_name")
     @Column(name = "price")
     private Map<String, Float> starter;
-    private HashMap<String, Float> mainCourse;
-    private HashMap<String, Float> dessert;
-    private HashMap<String, Float> drinks;
+    private Map<String, Float> mainCourse;
+    private Map<String, Float> dessert;
+    private Map<String, Float> drinks;
 
     public Menu() {
     }
