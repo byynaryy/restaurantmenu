@@ -35,8 +35,23 @@ public class Menu {
     @MapKeyColumn(name = "starter_name")
     @Column(name = "price")
     private Map<String, Float> starter;
+    @ElementCollection
+    @CollectionTable(name = "main_course",
+            joinColumns = {@JoinColumn(name = "menu_id", referencedColumnName = "id")})
+    @MapKeyColumn(name = "main_course_name")
+    @Column(name = "price")
     private Map<String, Float> mainCourse;
+    @ElementCollection
+    @CollectionTable(name = "dessert",
+            joinColumns = {@JoinColumn(name = "menu_id", referencedColumnName = "id")})
+    @MapKeyColumn(name = "dessert_name")
+    @Column(name = "price")
     private Map<String, Float> dessert;
+    @ElementCollection
+    @CollectionTable(name = "drinks",
+            joinColumns = {@JoinColumn(name = "menu_id", referencedColumnName = "id")})
+    @MapKeyColumn(name = "drinks_name")
+    @Column(name = "price")
     private Map<String, Float> drinks;
 
     public Menu() {
