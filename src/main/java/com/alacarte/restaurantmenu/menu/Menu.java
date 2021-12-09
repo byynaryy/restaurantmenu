@@ -43,8 +43,8 @@ public class Menu {
     }
 
     public Menu(Long id, String chef, float averagePrice, List<String> dietaryOptions,
-                Map<String, Float> starter, HashMap<String, Float> mainCourse,
-                HashMap<String, Float> dessert, HashMap<String, Float> drinks) {
+                Map<String, Float> starter, Map<String, Float> mainCourse,
+                Map<String, Float> dessert, Map<String, Float> drinks) {
         this.id = id;
         this.chef = chef;
         this.averagePrice = averagePrice;
@@ -56,7 +56,7 @@ public class Menu {
     }
 
     public Menu(String chef, float averagePrice, List<String> dietaryOptions, Map<String, Float> starter,
-                HashMap<String, Float> mainCourse, HashMap<String, Float> dessert, HashMap<String, Float> drinks) {
+                Map<String, Float> mainCourse, Map<String, Float> dessert, Map<String, Float> drinks) {
         this.chef = chef;
         this.averagePrice = averagePrice;
         this.dietaryOptions = dietaryOptions;
@@ -90,9 +90,7 @@ public class Menu {
         this.averagePrice = averagePrice;
     }
 
-    public List<String> getDietaryOptions() {
-        return dietaryOptions;
-    }
+    public List<String> getDietaryOptions() { return dietaryOptions; }
 
     public void setDietaryOptions(List<String> dietaryOptions) {
         this.dietaryOptions = dietaryOptions;
@@ -102,31 +100,31 @@ public class Menu {
         return starter;
     }
 
-    public void setStarter(HashMap<String, Float> starter) {
+    public void setStarter(Map<String, Float> starter) {
         this.starter = starter;
     }
 
-    public HashMap<String, Float> getMainCourse() {
+    public Map<String, Float> getMainCourse() {
         return mainCourse;
     }
 
-    public void setMainCourse(HashMap<String, Float> mainCourse) {
+    public void setMainCourse(Map<String, Float> mainCourse) {
         this.mainCourse = mainCourse;
     }
 
-    public HashMap<String, Float> getDessert() {
+    public Map<String, Float> getDessert() {
         return dessert;
     }
 
-    public void setDessert(HashMap<String, Float> dessert) {
+    public void setDessert(Map<String, Float> dessert) {
         this.dessert = dessert;
     }
 
-    public HashMap<String, Float> getDrinks() {
+    public Map<String, Float> getDrinks() {
         return drinks;
     }
 
-    public void setDrinks(HashMap<String, Float> drinks) {
+    public void setDrinks(Map<String, Float> drinks) {
         this.drinks = drinks;
     }
 
