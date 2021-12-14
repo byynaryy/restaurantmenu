@@ -54,5 +54,6 @@ public class MenuService {
     }
 
     public void addNewMenu(Menu menu) {
+        menuRepository.save(menu);
     }
 }
