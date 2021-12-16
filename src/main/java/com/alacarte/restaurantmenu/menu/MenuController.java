@@ -27,4 +27,8 @@ public class MenuController {
     public void registerNewMenu(@RequestBody Menu menu) {
         menuService.addNewMenu(menu);
     }
+
+    @DeleteMapping(path = "{menuId}")
+    public void deleteMenu(@PathVariable("menuId") Long menuId) {
+    }
 }
