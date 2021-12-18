@@ -28,6 +28,10 @@ public class MenuController {
         menuService.addNewMenu(menu);
     }
 
+    @PutMapping(path = "{menuId}")
+    public void updateMenu(){}
+
+
     @DeleteMapping(path = "{menuId}")
     public void deleteMenu(@PathVariable("menuId") Long menuId) {
         menuService.deleteMenu(menuId);
