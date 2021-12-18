@@ -26,5 +26,6 @@ public class MenuService {
     }
 
     public void deleteMenu(Long menuId) {
+        menuRepository.deleteById(menuId);
     }
 }
