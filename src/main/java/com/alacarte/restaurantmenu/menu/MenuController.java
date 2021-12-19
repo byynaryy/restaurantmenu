@@ -29,7 +29,7 @@ public class MenuController {
     }
 
     @PutMapping(path = "{menuId}")
-    public void updateMenu(){}
+    public void updateMenu(@PathVariable("menuId") Long menuId){}
 
 
     @DeleteMapping(path = "{menuId}")
