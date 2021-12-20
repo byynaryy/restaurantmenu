@@ -29,7 +29,8 @@ public class MenuController {
     }
 
     @PutMapping(path = "{menuId}")
-    public void updateMenu(@PathVariable("menuId") Long menuId){}
+    public void updateMenu(@PathVariable("menuId") Long menuId,
+                           @RequestParam(required = false) String chef){}
 
 
     @DeleteMapping(path = "{menuId}")
