@@ -31,7 +31,8 @@ public class MenuController {
     @PutMapping(path = "{menuId}")
     public void updateMenu(@PathVariable("menuId") Long menuId,
                            @RequestParam(required = false) String chef,
-                           @RequestParam(required = false) float averagePrice){}
+                           @RequestParam(required = false) float averagePrice,
+                           @RequestParam(required = false) List<String> dietaryOptions){}
 
 
     @DeleteMapping(path = "{menuId}")
