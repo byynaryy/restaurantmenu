@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "api/menu")
@@ -32,7 +33,8 @@ public class MenuController {
     public void updateMenu(@PathVariable("menuId") Long menuId,
                            @RequestParam(required = false) String chef,
                            @RequestParam(required = false) float averagePrice,
-                           @RequestParam(required = false) List<String> dietaryOptions){}
+                           @RequestParam(required = false) List<String> dietaryOptions,
+                           @RequestParam(required = false) Map<String, Float> starter){}
 
 
     @DeleteMapping(path = "{menuId}")
