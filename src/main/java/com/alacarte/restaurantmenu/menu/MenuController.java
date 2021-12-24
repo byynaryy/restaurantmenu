@@ -34,7 +34,8 @@ public class MenuController {
                            @RequestParam(required = false) String chef,
                            @RequestParam(required = false) float averagePrice,
                            @RequestParam(required = false) List<String> dietaryOptions,
-                           @RequestParam(required = false) Map<String, Float> starter){}
+                           @RequestParam(required = false) Map<String, Float> starter,
+                           @RequestParam(required = false) Map<String, Float> mainCourse){}
 
 
     @DeleteMapping(path = "{menuId}")
