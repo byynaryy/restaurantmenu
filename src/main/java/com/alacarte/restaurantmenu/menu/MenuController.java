@@ -37,7 +37,9 @@ public class MenuController {
                            @RequestParam(required = false) Map<String, Float> starter,
                            @RequestParam(required = false) Map<String, Float> mainCourse,
                            @RequestParam(required = false) Map<String, Float> dessert,
-                           @RequestParam(required = false) Map<String, Float> drinks){}
+                           @RequestParam(required = false) Map<String, Float> drinks){
+        menuService.updateMenu(menuId, chef, averagePrice, dietaryOptions, starter, mainCourse, dessert, drinks);
+    }
 
 
 
